@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Inventory</title>
+    <title>Inventory Management</title>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <meta charset="utf-8">
@@ -27,7 +27,7 @@
     </div>
     <!-- [ Pre-loader ] End -->
     <!-- [ navigation menu ] start -->
-    <nav class="pcoded-navbar">
+    <nav class="pcoded-navbar" id="pcoded-navbar" style="display: none" v-show="$route.path === '/' || $route.path === '/register' ? false : true">
         <div class="navbar-wrapper">
             <div class="navbar-brand header-logo">
                 <a href="index.html" class="b-brand">
@@ -96,7 +96,7 @@
     <!-- [ navigation menu ] end -->
 
     <!-- [ Header ] start -->
-    <header class="navbar pcoded-header navbar-expand-lg navbar-light">
+    <header class="navbar pcoded-header navbar-expand-lg navbar-light" id="pcoded-header" style="display: none" v-show="$route.path === '/' || $route.path === '/register' ? false : true">
         <div class="m-header">
             <a class="mobile-menu" id="mobile-collapse1" href="javascript:"><span></span></a>
             <a href="index.html" class="b-brand">
@@ -231,7 +231,17 @@
     </div>
     <!-- [ Main Content ] end -->
 </div>
-
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    let token = localStorage.getItem("token")
+    if (token) {
+        $("#pcoded-navbar").css('display', '');
+        $("#pcoded-header").css('display', '');
+    }
+    if (localStorage.getItem("user")) {
+        $('#username').html(localStorage.getItem("user"));
+    }
+</script>
 <!-- Required Js -->
 <script src="{{ asset('js/app.js') }}"></script>
 <script src="assets/js/vendor-all.min.js"></script>
