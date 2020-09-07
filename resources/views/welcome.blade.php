@@ -7,14 +7,15 @@
     <meta charset="utf-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Favicon icon -->
-    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{{ asset('assets/images/favicon.ico') }}" type="image/x-icon">
     <!-- fontawesome icon -->
-    <link rel="stylesheet" href="assets/fonts/fontawesome/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/fonts/fontawesome/css/fontawesome-all.min.css') }}">
     <!-- animation css -->
-    <link rel="stylesheet" href="assets/plugins/animation/css/animate.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/animation/css/animate.min.css') }}">
     <!-- vendor css -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 </head>
 
 <body >
@@ -44,7 +45,7 @@
                         <label>Navigation</label>
                     </li>
                     <li data-username="dashboard Default Ecommerce CRM Analytics Crypto Project" class="nav-item active">
-                        <router-link to="/dashboard" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></router-link>
+                        <router-link to="/home" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></router-link>
                     </li>
                     <li class="nav-item pcoded-menu-caption">
                         <label>Main Menu</label>
@@ -52,8 +53,8 @@
                     <li data-username="basic components Button Alert Badges breadcrumb Paggination progress Tooltip popovers Carousel Cards Collapse Tabs pills Modal Grid System Typography Extra Shadows Embeds" class="nav-item pcoded-hasmenu">
                         <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">Employee</span></a>
                         <ul class="pcoded-submenu">
-                            <li class=""><a href="bc_button.html" class="">Add Employee</a></li>
-                            <li class=""><a href="bc_button.html" class="">All Employee</a></li>
+                            <li class=""><router-link to="/employee/add" class="">Add Employee</router-link></li>
+                            <li class=""><router-link to="/" class="">All Employee</router-link></li>
                         </ul>
                     </li>
                     <li class="nav-item pcoded-menu-caption">
@@ -237,8 +238,19 @@
 </script>
 <!-- Required Js -->
 <script src="{{ asset('js/app.js') }}"></script>
-<script src="assets/js/vendor-all.min.js"></script>
-<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-<script src="assets/js/pcoded.min.js"></script>
+<script src="{{ asset('assets/js/vendor-all.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/js/pcoded.min.js') }}"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<script>
+    $(document).ready(function(){
+        var options={
+            format: 'yyyy-mm-dd',
+            todayHighlight: true,
+            autoclose: true,
+        };
+        $("#joining_date").datepicker(options);
+    })
+</script>
 </body>
 </html>

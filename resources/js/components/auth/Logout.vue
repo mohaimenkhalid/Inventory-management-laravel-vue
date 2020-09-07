@@ -8,7 +8,7 @@
     export default{
         mounted(){
             AppStorage.clear();
-            this.$router.push({ name : '/' });
+            this.$router.push({ name : 'login' });
             Toast.fire({
                 type: 'success',
                 title: 'Logout Successfully!!'
