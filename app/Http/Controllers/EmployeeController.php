@@ -4,10 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\Employee;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Image;
+use Illuminate\Support\Facades\File;
 
 class EmployeeController extends Controller
 {
+    public function index()
+    {
+        $employee = Employee::all();
+        return response()->json($employee);
+    }
+
     public function store(Request $request)
     {
         $validatedData = $request->validate([
@@ -26,22 +34,16 @@ class EmployeeController extends Controller
         $employee->email = $request->email;
         $employee->phone = $request->phone;
         $employee->salary = $request->salary;
+        $employee->gender = $request->gender;
         $employee->nid = $request->nid;
         $employee->address = $request->address;
         $employee->joining_date = $request->joining_date;
-
-        if ($request->photo) {
-            $strpos = strpos($request->photo, ';'); //get string position
-            $sub = substr($request->photo, 0, $strpos); // cut string 0 to ';' position
-            $ex = explode('/', $sub)[1]; //explode from '/'
-            $name = time() . '.' . $ex; //time() gives a name and ex get a extension and then join here
-            $location = (public_path(Employee::IMAGE_PATH.date('Y').'/'.date('m')) . $name);  // which location we want to save
-            $img = Image::make($request->photo)->resize(240, 200); //make image
-            $img->save($location); //save to location
-            $employee->photo = $location;
-        }
-
         $employee->save();
         return response()->json(['success' => 'Employee added successfully!']);
+    }
+
+    public function destroy($id) {
+        $employee = Employee::find($id)->delete();
+        return response()->json(['success', 'Employee deleted successfully!']);
     }
 }

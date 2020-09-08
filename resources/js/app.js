@@ -22,6 +22,9 @@ const Toast = Swal.mixin({
 })
 window.Toast = Toast;
 
+//Global Helper Class
+import User from './Helpers/User';
+window.User = User;
 
 const router = new VueRouter({
     routes,

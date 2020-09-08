@@ -54,7 +54,7 @@
                         <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">Employee</span></a>
                         <ul class="pcoded-submenu">
                             <li class=""><router-link to="/employee/add" class="">Add Employee</router-link></li>
-                            <li class=""><router-link to="/" class="">All Employee</router-link></li>
+                            <li class=""><router-link to="/employee/list" class="">All Employee</router-link></li>
                         </ul>
                     </li>
                     <li class="nav-item pcoded-menu-caption">
@@ -241,16 +241,5 @@
 <script src="{{ asset('assets/js/vendor-all.min.js') }}"></script>
 <script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('assets/js/pcoded.min.js') }}"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-<script>
-    $(document).ready(function(){
-        var options={
-            format: 'yyyy-mm-dd',
-            todayHighlight: true,
-            autoclose: true,
-        };
-        $("#joining_date").datepicker(options);
-    })
-</script>
 </body>
 </html>

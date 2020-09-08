@@ -66,6 +66,7 @@
         },
         methods:{
             login(){
+                console.log(this.form);
                 axios.post('/api/auth/login', this.form)
                     .then(res=>{
                         User.responseAfterLogin(res);

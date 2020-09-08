@@ -7,7 +7,7 @@
                         <h5>Add New Employee</h5>
                     </div>
                     <div class="card-body">
-                        <form @submit.prevent="" enctype="multipart/form-data">
+                        <form enctype="multipart/form-data">
                             <div class="form-group">
                                 <label>Name</label>
                                 <input name="name" type="text" v-model="form.name" class="form-control" placeholder="Enter Name">
@@ -49,15 +49,11 @@
                             </div>
                             <div class="form-group">
                                 <label>Joining Date</label>
-                                <input name="joining_date" type="text" v-model="form.joining_date" class="form-control" id="joining_date" placeholder="YYYY-MM-DD">
+                                <input name="joining_date" type="date" v-model="form.joining_date" class="form-control" id="joining_date" placeholder="YYYY-MM-DD">
                                 <small class="text-danger" v-if="errors.joining_date">{{ errors.joining_date[0] }}</small>
                             </div>
                             <div class="form-group">
-                                <label for="inputPhoto">Select Image</label>
-                                <input type="file" name="photo" @change="onFileSelected" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <button type="button" class="btn btn-square btn-primary float-right">Submit</button>
+                                <button type="button" @click="createEmployee" class="btn btn-square btn-primary float-right">Submit</button>
                             </div>
                         </form>
                     </div>
@@ -81,7 +77,6 @@
                     address: "",
                     nid: "",
                     joining_date: "",
-                    photo: "", /*backend/images/noimage.png*/
                 },
                 errors: {},
             }
@@ -92,6 +87,7 @@
             }
         },
         methods: {
+
             onFileSelected(event){
                 let file = event.target.files[0];
                 let reader = new FileReader();
@@ -100,6 +96,22 @@
                 }
                 reader.readAsDataURL(file);
             },
+
+            createEmployee(){
+                console.log(this.form.joining_date);
+                axios.post('/api/employee/store', this.form)
+                .then(res => {
+                    Toast.fire({
+                        icon: 'success',
+                        title: 'New employee added successfully'
+                    })
+                    this.$router.push({ name: 'employee.index' })
+                })
+                .catch(error => {
+                    this.errors =  error.response.data.errors;
+                })
+                /*this.$router.push({ name: 'employee.index' })*/
+            }
         }
     }
 </script>
