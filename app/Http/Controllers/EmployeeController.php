@@ -46,4 +46,18 @@ class EmployeeController extends Controller
         $employee = Employee::find($id)->delete();
         return response()->json(['success', 'Employee deleted successfully!']);
     }
+
+     public function update($id, Request $request){
+         $employee = Employee::find($id);
+         $employee->name = $request->name;
+         $employee->email = $request->email;
+         $employee->phone = $request->phone;
+         $employee->salary = $request->salary;
+         $employee->gender = $request->gender;
+         $employee->nid = $request->nid;
+         $employee->address = $request->address;
+         $employee->joining_date = $request->joining_date;
+         $employee->save();
+         return response()->json(['success' => 'Employee Information updated successfully!']);
+     }
 }

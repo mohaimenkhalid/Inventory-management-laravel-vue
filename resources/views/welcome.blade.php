@@ -57,6 +57,13 @@
                             <li class=""><router-link to="/employee/list" class="">All Employee</router-link></li>
                         </ul>
                     </li>
+                    <li data-username="basic components Button Alert Badges breadcrumb Paggination progress Tooltip popovers Carousel Cards Collapse Tabs pills Modal Grid System Typography Extra Shadows Embeds" class="nav-item pcoded-hasmenu">
+                        <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">Customer</span></a>
+                        <ul class="pcoded-submenu">
+                            <li class=""><router-link to="/customer/add" class="">Add Customer</router-link></li>
+                            <li class=""><router-link to="/customer/list" class="">All Employee</router-link></li>
+                        </ul>
+                    </li>
                     <li class="nav-item pcoded-menu-caption">
                         <label>Forms & table</label>
                     </li>

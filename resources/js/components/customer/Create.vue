@@ -4,7 +4,7 @@
             <div class="col-sm-6 offset-md-3">
                 <div class="card">
                     <div class="card-header">
-                        <h5>Add New Employee</h5>
+                        <h5>Add New Customer</h5>
                     </div>
                     <div class="card-body">
                         <form enctype="multipart/form-data">
@@ -38,22 +38,12 @@
                                 <small class="text-danger" v-if="errors.address">{{ errors.address[0] }}</small>
                             </div>
                             <div class="form-group">
-                                <label>Salary</label>
-                                <input name="salary" type="number" v-model="form.salary" class="form-control" placeholder="Enter Salary">
-                                <small class="text-danger" v-if="errors.salary">{{ errors.salary[0] }}</small>
-                            </div>
-                            <div class="form-group">
                                 <label>NID</label>
                                 <input name="nid" type="text" v-model="form.nid" class="form-control" placeholder="Enter National ID Card No">
                                 <small class="text-danger" v-if="errors.nid">{{ errors.nid[0] }}</small>
                             </div>
                             <div class="form-group">
-                                <label>Joining Date</label>
-                                <input name="joining_date" type="date" v-model="form.joining_date" class="form-control" id="joining_date" placeholder="YYYY-MM-DD">
-                                <small class="text-danger" v-if="errors.joining_date">{{ errors.joining_date[0] }}</small>
-                            </div>
-                            <div class="form-group">
-                                <button type="button" @click="createEmployee" class="btn btn-square btn-primary float-right">Submit</button>
+                                <button type="button" @click="createCustomer" class="btn btn-square btn-primary float-right">Submit</button>
                             </div>
                         </form>
                     </div>
@@ -72,11 +62,9 @@
                     name : "",
                     email : "",
                     phone : "",
-                    salary: "",
                     gender: "",
                     address: "",
                     nid: "",
-                    joining_date: "",
                 },
                 errors: {},
             }
@@ -87,30 +75,18 @@
             }
         },
         methods: {
-
-            onFileSelected(event){
-                let file = event.target.files[0];
-                let reader = new FileReader();
-                reader.onload = event => {
-                    this.form.photo = event.target.result;
-                }
-                reader.readAsDataURL(file);
-            },
-
-            createEmployee(){
-                console.log(this.form.joining_date);
-                axios.post('/api/employee/store', this.form)
-                .then(res => {
-                    Toast.fire({
-                        icon: 'success',
-                        title: 'New employee added successfully'
+            createCustomer(){
+                axios.post('/api/customer/store', this.form)
+                    .then(res => {
+                        Toast.fire({
+                            icon: 'success',
+                            title: 'New Customer added successfully'
+                        })
+                        this.$router.push({ name: 'customer.index' })
                     })
-                    this.$router.push({ name: 'employee.index' })
-                })
-                .catch(error => {
-                    this.errors =  error.response.data.errors;
-                })
-                /*this.$router.push({ name: 'employee.index' })*/
+                    .catch(error => {
+                        this.errors =  error.response.data.errors;
+                    })
             }
         }
     }
