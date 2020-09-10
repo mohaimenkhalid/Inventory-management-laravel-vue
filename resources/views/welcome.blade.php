@@ -61,7 +61,21 @@
                         <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">Customer</span></a>
                         <ul class="pcoded-submenu">
                             <li class=""><router-link to="/customer/add" class="">Add Customer</router-link></li>
-                            <li class=""><router-link to="/customer/list" class="">All Employee</router-link></li>
+                            <li class=""><router-link to="/customer/list" class="">All Customer</router-link></li>
+                        </ul>
+                    </li>
+                    <li data-username="basic components Button Alert Badges breadcrumb Paggination progress Tooltip popovers Carousel Cards Collapse Tabs pills Modal Grid System Typography Extra Shadows Embeds" class="nav-item pcoded-hasmenu">
+                        <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">Supplier</span></a>
+                        <ul class="pcoded-submenu">
+                            <li class=""><router-link to="/supplier/add" class="">Add Supplier</router-link></li>
+                            <li class=""><router-link to="/supplier/list" class="">All Supplier</router-link></li>
+                        </ul>
+                    </li>
+                    <li data-username="basic components Button Alert Badges breadcrumb Paggination progress Tooltip popovers Carousel Cards Collapse Tabs pills Modal Grid System Typography Extra Shadows Embeds" class="nav-item pcoded-hasmenu">
+                        <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">Category</span></a>
+                        <ul class="pcoded-submenu">
+                            <li class=""><router-link to="/category" class="">Add Category</router-link></li>
+                            <li class=""><router-link to="/category" class="">All Category</router-link></li>
                         </ul>
                     </li>
                     <li class="nav-item pcoded-menu-caption">

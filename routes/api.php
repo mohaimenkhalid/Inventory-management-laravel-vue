@@ -14,3 +14,13 @@ Route::delete('/employee/delete/{id}', 'EmployeeController@destroy')->name('empl
 Route::post('/customer/store', 'CustomerController@store')->name('customer.store');
 Route::get('/customer/list', 'CustomerController@index')->name('customer.list');
 Route::delete('/customer/delete/{id}', 'CustomerController@destroy')->name('customer.list');
+
+
+Route::post('/supplier/store', 'SupplierController@store')->name('supplier.store');
+Route::get('/supplier/list', 'SupplierController@index')->name('supplier.list');
+Route::delete('/supplier/delete/{id}', 'SupplierController@destroy')->name('supplier.list');
+
+Route::post('/category/store', 'CategoryController@store')->name('category.store');
+Route::get('/category/list', 'CategoryController@index')->name('category.list');
+Route::delete('/category/delete/{id}', 'CategoryController@destroy')->name('category.list');
+
