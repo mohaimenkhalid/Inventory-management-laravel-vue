@@ -98,7 +98,7 @@
                     cancelButtonColor: '#d33',
                     confirmButtonText: 'Yes, delete it!'
                 }).then((result) => {
-                    if(result){
+                    if(result.isConfirmed){
                         axios.delete('/api/category/delete/'+id)
                         .then(res => {
                             this.categories = this.categories.filter(category => {

@@ -81,7 +81,7 @@
                     cancelButtonColor: '#d33',
                     confirmButtonText: 'Yes, delete it!'
                 }).then((result) => {
-                    if(result){
+                    if(result.isConfirmed){
                         axios.delete('/api/employee/delete/'+id)
                         .then(res => {
                             this.employees = this.employees.filter(employee => {

@@ -2236,7 +2236,7 @@ __webpack_require__.r(__webpack_exports__);
         cancelButtonColor: '#d33',
         confirmButtonText: 'Yes, delete it!'
       }).then(function (result) {
-        if (result) {
+        if (result.isConfirmed) {
           axios["delete"]('/api/category/delete/' + id).then(function (res) {
             _this2.categories = _this2.categories.filter(function (category) {
               return category.id !== id;
@@ -2476,7 +2476,7 @@ __webpack_require__.r(__webpack_exports__);
         cancelButtonColor: '#d33',
         confirmButtonText: 'Yes, delete it!'
       }).then(function (result) {
-        if (result) {
+        if (result.isConfirmed) {
           axios["delete"]('/api/customer/delete/' + id).then(function (res) {
             _this2.customers = _this2.customers.filter(function (customer) {
               return customer.id !== id;
@@ -2728,7 +2728,7 @@ __webpack_require__.r(__webpack_exports__);
         cancelButtonColor: '#d33',
         confirmButtonText: 'Yes, delete it!'
       }).then(function (result) {
-        if (result) {
+        if (result.isConfirmed) {
           axios["delete"]('/api/employee/delete/' + id).then(function (res) {
             _this2.employees = _this2.employees.filter(function (employee) {
               return employee.id !== id;
@@ -2963,7 +2963,7 @@ __webpack_require__.r(__webpack_exports__);
         cancelButtonColor: '#d33',
         confirmButtonText: 'Yes, delete it!'
       }).then(function (result) {
-        if (result) {
+        if (result.isConfirmed) {
           axios["delete"]('/api/supplier/delete/' + id).then(function (res) {
             _this2.suppliers = _this2.suppliers.filter(function (supplier) {
               return supplier.id !== id;
