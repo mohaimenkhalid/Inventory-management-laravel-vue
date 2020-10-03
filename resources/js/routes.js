@@ -9,6 +9,9 @@ let Customer = require('./components/customer/index').default;
 let CreateSupplier = require('./components/supplier/create').default;
 let Supplier = require('./components/supplier/index').default;
 let Category = require('./components/category/index').default;
+let CreateProduct = require('./components/product/Create').default;
+let Product = require('./components/product/Index').default;
+let Pos = require('./components/pos/Index').default;
 
 export const routes = [
     { path: '/', component: Login, name:'login'},
@@ -29,4 +32,11 @@ export const routes = [
 
     //category
     { path: '/category', component: Category, name: 'category.index'},
+
+    //Product
+    { path: '/product', component: Product, name: 'product.index'},
+    { path: '/product/add', component: CreateProduct, name: 'product.add'},
+
+    //POS
+    { path: '/point-of-sale', component: Pos, name: 'pos.index'},
 ]

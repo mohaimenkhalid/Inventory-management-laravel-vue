@@ -10,7 +10,9 @@ Route::group(['middleware' => 'api', 'prefix' => 'auth'], function ($router) {
 Route::post('/employee/store', 'EmployeeController@store')->name('employee.store');
 Route::get('/employee/list', 'EmployeeController@index')->name('employee.list');
 Route::delete('/employee/delete/{id}', 'EmployeeController@destroy')->name('employee.list');
-/*Route::post('/employee/update/{id}', 'EmployeeController@update')->name('employee.update');*/
+Route::get('/employee/edit/{id}', 'EmployeeController@edit')->name('employee.edit');
+Route::post('/employee/update/{id}', 'EmployeeController@update')->name('employee.update');
+
 Route::post('/customer/store', 'CustomerController@store')->name('customer.store');
 Route::get('/customer/list', 'CustomerController@index')->name('customer.list');
 Route::delete('/customer/delete/{id}', 'CustomerController@destroy')->name('customer.list');
@@ -23,4 +25,10 @@ Route::delete('/supplier/delete/{id}', 'SupplierController@destroy')->name('supp
 Route::post('/category/store', 'CategoryController@store')->name('category.store');
 Route::get('/category/list', 'CategoryController@index')->name('category.list');
 Route::delete('/category/delete/{id}', 'CategoryController@destroy')->name('category.list');
+
+Route::get('/product/list', 'ProductController@index')->name('product.index');
+Route::post('/product/store', 'ProductController@store')->name('product.store');
+Route::get('/product/edit/{id}', 'ProductController@edit')->name('product.edit');
+Route::post('/product/update/{id}', 'ProductController@update')->name('product.update');
+Route::delete('/product/delete/{id}', 'ProductController@delete')->name('product.delete');
 

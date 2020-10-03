@@ -47,6 +47,9 @@
                     <li data-username="dashboard Default Ecommerce CRM Analytics Crypto Project" class="nav-item active">
                         <router-link to="/home" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></router-link>
                     </li>
+                    <li data-username="dashboard Default Ecommerce CRM Analytics Crypto Project" class="nav-item active">
+                        <router-link to="/point-of-sale" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">POS</span></router-link>
+                    </li>
                     <li class="nav-item pcoded-menu-caption">
                         <label>Main Menu</label>
                     </li>
@@ -78,6 +81,13 @@
                             <li class=""><router-link to="/category" class="">All Category</router-link></li>
                         </ul>
                     </li>
+                    <li data-username="basic components Button Alert Badges breadcrumb Paggination progress Tooltip popovers Carousel Cards Collapse Tabs pills Modal Grid System Typography Extra Shadows Embeds" class="nav-item pcoded-hasmenu">
+                        <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">Product</span></a>
+                        <ul class="pcoded-submenu">
+                            <li class=""><router-link to="/product/add" class="">Add Product</router-link></li>
+                            <li class=""><router-link to="/product" class="">All Product</router-link></li>
+                        </ul>
+                    </li>
                     <li class="nav-item pcoded-menu-caption">
                         <label>Forms & table</label>
                     </li>
@@ -103,7 +113,7 @@
                         </ul>
                     </li>
                     <li data-username="Sample Page" class="nav-item"><a href="sample-page.html" class="nav-link"><span class="pcoded-micon"><i class="feather icon-sidebar"></i></span><span class="pcoded-mtext">Sample page</span></a></li>
-                    <li data-username="Disabled Menu" class="nav-item"><router-link to="logout" class="nav-link"><span class="pcoded-micon"><i class="feather icon-power"></i></span><span class="pcoded-mtext">Logout</span></router-link></li>
+                    <li data-username="Disabled Menu" class="nav-item"><router-link to="/logout" class="nav-link"><span class="pcoded-micon"><i class="feather icon-power"></i></span><span class="pcoded-mtext">Logout</span></router-link></li>
                 </ul>
             </div>
         </div>
